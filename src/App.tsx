@@ -1,28 +1,27 @@
-import { useState } from "react";
 import "./App.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Home } from "./components/pages/Home";
+import { Login } from "./components/pages/Login";
+import { SessionLayout } from "./components/layout/SessionLayout";
+import { Dashboard } from "./components/pages/Dashboard";
+import { NoPageFound } from "./components/pages/NoPageFound";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <div className="flex">
-        <div>knjlknjdsnd</div>
-        <div>ioioiooaoiaoioi</div>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/">
+          <Route path="login" element={<Login />} />
+          <Route index element={<Home />} />
+
+          <Route path="/session" element={<SessionLayout />}>
+            <Route path="dashboard" element={<Dashboard />} />
+          </Route>
+
+          <Route path="*" element={<NoPageFound />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
