@@ -1,12 +1,52 @@
-# React + Vite
+# ♻️ Recycle Map
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Recycle Map** é uma plataforma desenvolvida para facilitar o gerenciamento de resíduos e o acesso a pontos de coleta de materiais recicláveis. A aplicação permite que os usuários contribuam ativamente com a sustentabilidade, cadastrando pontos de coleta, consultando locais disponíveis e registrando suas próprias ações de reciclagem.
 
-Currently, two official plugins are available:
+## 🚀 MVP Front-End
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Este projeto representa o **MVP (Minimum Viable Product)** da aplicação **Front-End**, desenvolvido com **React** e **Vite**, utilizando **TypeScript** e bibliotecas modernas para UI, roteamento e validação de formulários.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ✨ Funcionalidades
+
+- Cadastrar novos pontos de coleta de materiais recicláveis.
+- Listar pontos de coleta com detalhes.
+- Visualizar materiais aceitos em cada ponto.
+- Registrar contribuições individuais para a reciclagem.
+- Interface moderna e responsiva com Material UI e TailwindCSS.
+
+---
+
+## 🛠️ Tecnologias e Bibliotecas
+
+- [React](https://reactjs.org/)
+- [Vite](https://vitejs.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Material UI](https://mui.com/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [React Hook Form](https://react-hook-form.com/)
+- [Yup](https://github.com/jquense/yup)
+- [React Router DOM](https://reactrouter.com/en/main)
+- [Day.js](https://day.js.org/)
+
+---
+
+## 📦 Instalação
+
+- Clone o repositório
+- instale as dependências
+
+```bash
+ npm install
+```
+
+---
+
+## ▶️ Como Rodar o Projeto
+
+- Rodar o comando abaixo no terminal
+
+```bash
+ npm run dev
+```
