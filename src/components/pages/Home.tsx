@@ -1,5 +1,19 @@
-import { JSX } from "react";
+import { JSX, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { getUserSession } from "../../utils/getUserSession";
 
 export const Home = (): JSX.Element => {
-  return <div>Esta é a pagina inicial: EM DESENVOLVIMENTO</div>;
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const userSession = getUserSession();
+
+    if (!userSession) {
+      navigate("/login");
+    } else {
+      navigate("/session/dashboard");
+    }
+  }, []);
+
+  return <div>Home page</div>;
 };

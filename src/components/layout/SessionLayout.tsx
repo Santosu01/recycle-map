@@ -1,10 +1,11 @@
-import { JSX, useEffect, useState } from "react";
+import { JSX } from "react";
 import { Navigate, Outlet } from "react-router-dom";
+import { getUserSession } from "../../utils/getUserSession";
 
 export const SessionLayout = (): JSX.Element => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const userSession = getUserSession();
 
-  if (!isAuthenticated) {
+  if (!userSession) {
     return <Navigate to="/login" replace />;
   }
 
