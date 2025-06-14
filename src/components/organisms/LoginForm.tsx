@@ -50,8 +50,8 @@ export const LoginForm: FC = () => {
         <AppFormInputText
           control={control}
           name="username"
-          label="Usuário"
-          placeholder="Informe se usuário"
+          label="CPF"
+          placeholder="Informe seu CPF"
           startIcon={
             <AccountCircle
               color={errors.username?.message ? "error" : undefined}

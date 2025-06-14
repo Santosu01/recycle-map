@@ -1,6 +1,7 @@
 import { JSX } from "react";
 import { Navigate, Outlet } from "react-router-dom";
 import { getUserSession } from "../../utils/getUserSession";
+import { AppContainer } from "./AppContainer";
 
 export const SessionLayout = (): JSX.Element => {
   const userSession = getUserSession();
@@ -9,5 +10,9 @@ export const SessionLayout = (): JSX.Element => {
     return <Navigate to="/login" replace />;
   }
 
-  return <Outlet />;
+  return (
+    <AppContainer>
+      <Outlet />
+    </AppContainer>
+  );
 };
