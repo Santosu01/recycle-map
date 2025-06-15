@@ -17,7 +17,7 @@ interface ISidebarNavItems {
 }
 
 export const AppContainer: FC<IAppContainerProps> = ({ children }) => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
 
   const handleDrawerOpen = () => {
     setOpen(!open);
@@ -66,7 +66,7 @@ export const AppContainer: FC<IAppContainerProps> = ({ children }) => {
               />
             </button>
           </div>
-          <div className="mt-[100px] flex flex-col w-full divide-y divide-white/40 justify-center text-white">
+          <div className="mt-[100px] flex flex-col w-full divide-y divide-white/40 justify-center text-white overflow-hidden">
             {sidebarNavItems.map((navItem) => (
               <div
                 key={navItem.key}
@@ -88,7 +88,7 @@ export const AppContainer: FC<IAppContainerProps> = ({ children }) => {
         </aside>
 
         <div
-          className={`pt-[70px] w-full px-6 ${
+          className={`pt-[70px] w-full px-6 bg-[#48d17d5e] ${
             open ? "w-[calc(100vw-(240px))]" : "w-[calc(100vw-(48px))]"
           }`}
         >
