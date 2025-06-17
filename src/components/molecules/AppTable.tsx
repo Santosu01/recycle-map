@@ -9,14 +9,14 @@ interface IAppTableProps {
 
 export const AppTable: FC<IAppTableProps> = ({ data, columns, getRowKey }) => {
   return (
-    <div className="p-2 bg-white rounded-md">
+    <div className="p-2 bg-white rounded-md overflow-auto">
       <table className="min-w-full text-left rounded-md">
         <thead className="bg-white">
           <tr>
             {columns.map((col) => (
               <th
                 key={String(col.key)}
-                className="p-2 border-b border-gray-500 text-gray-500"
+                className="p-2 border-b border-gray-500 text-gray-500 min-w-[150px]"
               >
                 {col.title}
               </th>

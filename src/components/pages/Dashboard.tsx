@@ -1,30 +1,25 @@
 import { JSX } from "react";
 import { DashboardCard } from "../molecules/DashboardCard";
-import { ITableColumn } from "../../types/table";
-import { AppTable } from "../molecules/AppTable";
+import { CollectionLocationsList } from "../organisms/CollectionLocationsList";
+import { getUserList } from "../../utils/getUserList";
+import { getCollectionLocationList } from "../../utils/getCollectionLocationList";
 
 export const Dashboard = (): JSX.Element => {
-  const collectionLocationHeaders: ITableColumn[] = [
-    { key: "localName", title: "Nome do local" },
-    { key: "localDescription", title: "Descrição do local " },
-    { key: "user", title: "Identificador do Usuário " },
-    { key: "address", title: "Endereço" },
-    { key: "acceptedWaste", title: "Resíduos aceitos" },
-  ];
+  const usersLength = String(getUserList().length);
+  const collectionLocationsLength = String(getCollectionLocationList().length);
 
   return (
-    <div className="p-8 flex flex-col gap-8">
-      <div className="flex gap-8">
-        <DashboardCard title="Usuários" value="50" />
-        <DashboardCard title="Locais de coleta" value="40" />
+    <div className="flex flex-col gap-8 py-8 md:px-8">
+      <div className="flex flex-col gap-8 md:flex-row">
+        <DashboardCard title="Usuários" value={usersLength} />
+        <DashboardCard
+          title="Pontos de coleta"
+          value={collectionLocationsLength}
+        />
       </div>
 
-      <div className="max-w-[1440px]">
-        <AppTable
-          columns={collectionLocationHeaders}
-          data={[]}
-          getRowKey={(data) => data.id}
-        />
+      <div>
+        <CollectionLocationsList />
       </div>
     </div>
   );

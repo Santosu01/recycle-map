@@ -11,6 +11,9 @@ import { Signup } from "./components/pages/Signup";
 import { getUserList } from "./utils/getUserList";
 import { setUserList } from "./utils/setUserList";
 import { userListMock } from "./constants/userListMock";
+import { CollectionLocations } from "./components/pages/CollectionLocations";
+import { CollectionLocationAdd } from "./components/pages/CollectionLocationAdd";
+import { CollectionLocationEdit } from "./components/pages/CollectionLocationEdit";
 
 function App() {
   useEffect(() => {
@@ -34,6 +37,17 @@ function App() {
 
           <Route path="session" element={<SessionLayout />}>
             <Route path="dashboard" element={<Dashboard />} />
+            <Route path="pontos-de-coleta" element={<CollectionLocations />} />
+
+            <Route
+              path="adicionar-ponto-de-coleta"
+              element={<CollectionLocationAdd />}
+            />
+
+            <Route
+              path="editar-ponto-de-coleta/:id"
+              element={<CollectionLocationEdit />}
+            />
           </Route>
 
           <Route path="*" element={<NoPageFound />} />

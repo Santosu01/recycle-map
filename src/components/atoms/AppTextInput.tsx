@@ -1,5 +1,5 @@
-import { InputAdornment, SelectChangeEvent, TextField } from "@mui/material";
-import React, { ChangeEvent, ChangeEventHandler, FC } from "react";
+import { InputAdornment, TextField } from "@mui/material";
+import React, { ChangeEvent, FC } from "react";
 
 interface IAppTextInputProps {
   startIcon: React.ReactNode;
@@ -25,7 +25,7 @@ export const AppTextInput: FC<IAppTextInputProps> = ({
   placeholder,
 }) => {
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setValue(event.target.value as string);
+    setValue(event.target.value);
   };
 
   return (

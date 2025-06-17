@@ -12,6 +12,7 @@ interface IAppFormInputTextProps {
   placeholder?: string;
   type?: "text" | "password" | "email";
   loading?: boolean;
+  multiline?: boolean;
 }
 
 export const AppFormInputText: FC<IAppFormInputTextProps> = ({
@@ -23,6 +24,7 @@ export const AppFormInputText: FC<IAppFormInputTextProps> = ({
   type,
   loading,
   endIcon,
+  multiline,
 }) => {
   return (
     <Controller
@@ -33,6 +35,7 @@ export const AppFormInputText: FC<IAppFormInputTextProps> = ({
           color="success"
           label={label}
           defaultValue={value}
+          multiline={multiline}
           variant="outlined"
           type={type}
           onChange={onChange}
@@ -40,6 +43,7 @@ export const AppFormInputText: FC<IAppFormInputTextProps> = ({
           helperText={error?.message}
           placeholder={placeholder}
           size="medium"
+          sx={{ width: "100%" }}
           slotProps={{
             input: {
               startAdornment: (

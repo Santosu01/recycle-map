@@ -17,7 +17,7 @@ interface ISidebarNavItems {
 }
 
 export const AppContainer: FC<IAppContainerProps> = ({ children }) => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   const handleDrawerOpen = () => {
     setOpen(!open);
@@ -32,9 +32,9 @@ export const AppContainer: FC<IAppContainerProps> = ({ children }) => {
     },
     {
       key: "collection-location",
-      label: "Locais de coleta",
+      label: "Pontos de coleta",
       icon: <MyLocationIcon />,
-      to: "/session/collection-location",
+      to: "/session/pontos-de-coleta",
     },
   ];
 
@@ -49,7 +49,7 @@ export const AppContainer: FC<IAppContainerProps> = ({ children }) => {
       </header>
       <div className="flex w-full">
         <aside
-          className={`relative h-full bg-green-700 border-r border-green-800/70 transition-all duration-200 ease-in-out ${
+          className={`fixed z-30 h-full bg-green-700 border-r border-green-800/70 transition-all duration-200 ease-in-out md:relative ${
             open ? "w-[240px]" : "w-12"
           }`}
         >
@@ -88,8 +88,8 @@ export const AppContainer: FC<IAppContainerProps> = ({ children }) => {
         </aside>
 
         <div
-          className={`pt-[70px] w-full px-6 bg-[#48d17d5e] ${
-            open ? "w-[calc(100vw-(240px))]" : "w-[calc(100vw-(48px))]"
+          className={`ml-12 pt-[70px] w-[calc(100vw-(48px))] px-4 bg-[#48d17d5e] transition-all duration-200 ease-in-out md:ml-0 md:px-6 ${
+            open ? "md:w-[calc(100vw-(240px))]" : ""
           }`}
         >
           {children}

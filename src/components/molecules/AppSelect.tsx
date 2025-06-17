@@ -30,7 +30,7 @@ export const AppSelect: FC<IAppSelectProps> = ({
   errorMessage,
 }) => {
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setValue(event.target.value as string);
+    setValue(event.target.value);
   };
 
   return (

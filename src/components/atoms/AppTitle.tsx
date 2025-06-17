@@ -11,7 +11,7 @@ export const AppTitle: FC<IAppTitleProps> = ({
 }): JSX.Element => {
   return (
     <h2
-      className={`text-[#3e6f51] font-semibold text-2xl uppercase md:text-3xl ${classesList?.join(
+      className={`text-[#3e6f51] font-semibold text-xl md:text-2xl ${classesList?.join(
         " "
       )}`}
     >
