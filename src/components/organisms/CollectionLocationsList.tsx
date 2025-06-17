@@ -12,6 +12,7 @@ import { Button } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { removeCollectionLocation } from "../../utils/removeCollectionLocation";
 import { useNavigate } from "react-router-dom";
+import { translateUserIdentify } from "../../utils/translateUserIdentify";
 
 interface ICollectionLocationsProps {
   showActions?: boolean;
@@ -95,7 +96,13 @@ export const CollectionLocationsList: FC<ICollectionLocationsProps> = ({
   const collectionLocationHeaders: ITableColumn[] = [
     { key: "locationName", title: "Nome do local" },
     { key: "locationDescription", title: "Descrição do local " },
-    { key: "userIdentify", title: "Identificador do Usuário " },
+    {
+      key: "userIdentify",
+      title: "Identificador do Usuário ",
+      render: (value) => {
+        return translateUserIdentify(value);
+      },
+    },
     {
       key: "address",
       title: "Endereço",

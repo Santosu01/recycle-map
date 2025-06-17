@@ -27,10 +27,11 @@ export const AppFormAutocomplete: FC<IAppFormAutocompleteProps> = ({
       <Controller
         control={control}
         name={name}
-        render={({ field: { onChange }, fieldState: { error } }) => (
+        render={({ field: { onChange, value }, fieldState: { error } }) => (
           <Autocomplete
             options={items}
             color="success"
+            value={value ? items.find((opt) => opt.key === value) : null}
             onChange={(_evt, value) => {
               onChange(value?.key);
             }}
